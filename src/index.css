@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar for better look */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #6d28d9 #111827; /* violet-600 on gray-900 */
+  
+}
+/* STAR TRAIL CSS */
+/* 🌟 main gold star trail */
+.gold-star {
+  position: fixed;
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle, #faf9fa, #fcfbfd, #fbf9fc);
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: starMove 0.9s ease-out forwards;
+  filter: drop-shadow(0 0 10px #faf9fa);
+}
+
+
+/* ✨ second trail → small gold dust */
+.gold-dust {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #faf9fa, #faf9fa);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: dustMove 0.8s ease-out forwards;
+  filter: drop-shadow(0 0 6px #faf9fa);
+}
+
+
+/* ⭐ Animations */
+@keyframes starMove {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -120%) scale(0.4);
+  }
+}
+
+@keyframes dustMove {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -80%) scale(0.2);
+  }
+}
+
+@keyframes wave {
+  0%   { transform: rotate(0deg); }
+  10%  { transform: rotate(14deg); }
+  20%  { transform: rotate(-8deg); }
+  30%  { transform: rotate(14deg); }
+  40%  { transform: rotate(-4deg); }
+  50%  { transform: rotate(10deg); }
+  60%  { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-wave {
+  animation: wave 1.6s ease-in-out infinite;
+  transform-origin: 70% 70%;
+}
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+
+
+
+
+
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111827;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #6d28d9;
+  border-radius: 4px;
+  border: 2px solid #111827;
+}
