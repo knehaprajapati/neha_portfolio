@@ -361,10 +361,13 @@ const AboutSection = () => (
         {/* 🎥 BIG Video Section */}
         <div className="w-full flex justify-center">
           <video
-            src="/my_v.mp4"  // ⚠️ Put your video in public folder
-            controls
-            className="w-full max-w-4xl h-[420px] sm:h-[480px] lg:h-[520px] object-cover rounded-xl shadow-2xl border-2 border-violet-500"
-          ></video>
+  className="w-full max-w-4xl rounded-xl shadow-2xl border-2 border-violet-500"
+  src="/myyy.mp4"
+  controls
+  preload="metadata"
+  playsInline
+></video>
+
         </div>
 
         {/* ✨ QUOTE */}
